@@ -1,0 +1,43 @@
+{
+  "usuarios": [
+    {
+      "nombre": "usu1",
+      "notas": [
+        {
+          "title": "Rojo",
+          "body": "Hola"
+        },
+        {
+          "title": "Azul",
+          "body": "Adios"
+        }
+      ]
+    },
+    {
+      "nombre": "usu2",
+      "notas": [
+        {
+          "title": "Azul",
+          "body": "Hola"
+        },
+        {
+          "title": "Rojo",
+          "body": "Adios"
+        }
+      ]
+    },
+    {
+      "nombre": "usu2",
+      "notas": [
+        {
+          "title": "Azul",
+          "body": "Hola"
+        },
+        {
+          "title": "Rojo",
+          "body": "Adios"
+        }
+      ]
+    }
+  ]
+}

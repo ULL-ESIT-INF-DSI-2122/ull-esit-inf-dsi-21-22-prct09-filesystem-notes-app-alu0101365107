@@ -1,8 +1,8 @@
 {
   "exclude": [
-    "./tests",
+    "./test",
     "./node_modules",
-    "./dist"
+    "./dist"  
   ],
   "compilerOptions": {
     "target": "ES2020",
