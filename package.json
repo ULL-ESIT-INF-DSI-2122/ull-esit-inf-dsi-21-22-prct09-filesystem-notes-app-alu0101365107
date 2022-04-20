@@ -9,7 +9,7 @@
   "scripts": {
     "doc": "typedoc",
     "test": "mocha",
-    "coverage": "nyc npm test && nyc report --reporter=lcov"
+    "coverage": "nyc npm test && nyc report --reporter=lcov",
     "index": "tsc-watch --onSuccess \"node dist/index.js\""
   },
   "repository": {
