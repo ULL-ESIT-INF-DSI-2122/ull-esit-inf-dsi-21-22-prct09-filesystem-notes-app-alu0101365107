@@ -9,8 +9,9 @@ export abstract class TemplateMethod {
   constructor(protected array: number []) {
   };
 
-  public run() {
-  }
+  // public run() {
+  //   this.filter(valorFilter);
+  // }
 
   /**
    * Método para filtrar los valores de un array según una predicado lógico
@@ -26,7 +27,6 @@ export abstract class TemplateMethod {
     });
     return resultado;
   }
-  // protected map(func: (numero: number) => number) {
-
-  // };
+  protected map(func: (numero: number) => number) {
+  };
 }
