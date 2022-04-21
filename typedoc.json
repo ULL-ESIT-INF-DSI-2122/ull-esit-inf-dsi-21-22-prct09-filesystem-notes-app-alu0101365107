@@ -1,6 +1,8 @@
 {
   "entryPoints": [
-    "./src/index.ts"
+    "./src/index.ts",
+    "./src/mod9/initTemplateMethod.ts",
+    "./src/mod9/templateMethod.ts"
   ],
   "out": "./typedoc"
 }

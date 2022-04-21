@@ -11,7 +11,8 @@
     "test": "mocha",
     "coverage": "nyc npm test && nyc report --reporter=lcov",
     "index": "tsc-watch --onSuccess \"node dist/index.js\"",
-    "note-app": "tsc-watch --onSuccess \"node dist/note-app.js\""
+    "note-app": "tsc-watch --onSuccess \"node dist/note-app.js\"",
+    "mod9": "tsc-watch --onSuccess \"node dist/mod9/index.js\""
   },
   "repository": {
     "type": "git",
