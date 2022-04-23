@@ -63,11 +63,12 @@ yargs.command({
     if (typeof argv.user === "string") {
       if (fs.existsSync(`./database/${argv.user}`)) {
         const ficheros = fs.readdirSync(`./database/${argv.user}`);
+        console.log("Tus notas: \n");
         ficheros.forEach((nombreFichero) => {
           const buffer = fs.readFileSync(`./database/${argv.user}/${nombreFichero}`, 'utf8');
           const bufferJson = JSON.parse(buffer);
           const nota = new Nota(bufferJson.titulo, bufferJson.body, bufferJson.color);
-          console.log(nota.getRead());
+          console.log(nota.getColorTitulo());
         });
       } else {
         console.log(chalk.red(`El usuario: ${argv.user} no existe`));
@@ -143,4 +144,44 @@ yargs.command({
     }
   },
 });
+
+yargs.command({
+  command: 'mod',
+  describe: 'Modificar una nota en específico',
+  builder: {
+    user: {
+      describe: 'Usuario',
+      demandOption: true,
+      type: 'string',
+    },
+    title: {
+      describe: 'Título de la nota',
+      demandOption: true,
+      type: 'string',
+    },
+    body: {
+      describe: 'Nuevo contenido de la nota',
+      demandOption: true,
+      type: 'string',
+    },
+  },
+  handler(argv) {
+    if (typeof argv.user === "string" && typeof argv.title === "string") {
+      if (fs.existsSync(`./database/${argv.user}`)) {
+        if (fs.existsSync(`./database/${argv.user}/${argv.title}.json`)) {
+          const buffer = fs.readFileSync(`./database/${argv.user}/${argv.title}.json`, 'utf8');
+          const bufferJson = JSON.parse(buffer);
+          bufferJson.body = argv.body;
+          fs.writeFileSync(`./database/${argv.user}/${argv.title}.json`, JSON.stringify(bufferJson));
+          console.log(chalk.green(`Nota actualizada correctamente`));
+        } else {
+          console.log(chalk.red(`La nota con el título: ${argv.title} no existe.`));
+        }
+      } else {
+        console.log(chalk.red(`El usuario: ${argv.user} no existe.`));
+      }
+    }
+  },
+});
+
 yargs.parse();
