@@ -1,7 +1,10 @@
 {
   "entryPoints": [
-    "./src/mod9/initTemplateMethod.ts",
-    "./src/mod9/templateMethod.ts"
+    "./src/mod9/filterMapAddReduce.ts",
+    "./src/mod9/templateMethod.ts",
+    "./src/nota.ts",
+    "./src/note-app.ts",
+    "./src/usuario.ts"
   ],
   "out": "./typedoc"
 }

@@ -2,9 +2,21 @@ import * as chalk from 'chalk';
 import * as fs from 'fs';
 import {Nota} from './nota';
 
+/** Clase para la gestion de las notas de un usuario */
 export class Usuario {
+/**
+ * Clase para la gestion de las notas de un usuario
+ * @param nombre Nombre del usuario
+ */
   constructor(protected nombre: string) {
   }
+  /**
+   * Metodo para añadir una nueva nota
+   * @param title Titulo de la nota
+   * @param body Texto de la nota
+   * @param color Color de la nota
+   * @returns Resultado de la operacion de creacion
+   */
   add(title: string, body:string, color: string): string {
     const nota = new Nota(title, body, color);
     const notaJson = JSON.stringify(nota);
@@ -19,6 +31,11 @@ export class Usuario {
       return chalk.red(`La nota con el titulo: ${title}, ya existe`);
     }
   }
+  /**
+   * Metodo para eliminar una nota
+   * @param title Titulo de la nota a eliminar
+   * @returns Resultado de la operacion de eliminacion
+   */
   remove(title: string): string {
     if (fs.existsSync(`./database/${this.nombre}`)) {
       if (fs.existsSync(`./database/${this.nombre}/${title}.json`)) {
@@ -33,6 +50,10 @@ export class Usuario {
       return chalk.red(`El usuario: ${this.nombre} no existe.`);
     }
   }
+  /**
+   * Metodo para listar las notas de un usuario
+   * @returns String con las notas formateadas
+   */
   list(): string {
     if (fs.existsSync(`./database/${this.nombre}`)) {
       const ficheros = fs.readdirSync(`./database/${this.nombre}`);
@@ -49,6 +70,11 @@ export class Usuario {
       return chalk.red(`El usuario: ${this.nombre} no existe`);
     }
   }
+  /**
+   * Metodo para la lectura de una nota en concreto
+   * @param title Titulo de la nota
+   * @returns Contenido de la nota
+   */
   read(title: string): string {
     if (fs.existsSync(`./database/${this.nombre}`)) {
       if (fs.existsSync(`./database/${this.nombre}/${title}.json`)) {
@@ -63,6 +89,13 @@ export class Usuario {
       return chalk.red(`El usuario: ${this.nombre} no existe.`);
     }
   }
+  /**
+   * Metodo para la modificacion de un nota
+   * @param title Titulo de la nota
+   * @param datoActualizar Contenido a actualizar, este puede ser el contenido o el color
+   * @param isColor En caso de que sea true, el usuario estara modificando el color, de lo contrario modificara el contenido
+   * @returns Resultado de la operacion de modificacion
+   */
   mod(title: string, datoActualizar?: string, isColor: boolean = false): string {
     if (fs.existsSync(`./database/${this.nombre}`)) {
       if (fs.existsSync(`./database/${this.nombre}/${title}.json`)) {
@@ -86,6 +119,10 @@ export class Usuario {
       return chalk.red(`El usuario: ${this.nombre} no existe.`);
     }
   }
+  /**
+   * Metodo creado para la inicializacion de los expect
+   * @returns Valor de la operacion
+   */
   initializeTest(): boolean {
     if (fs.existsSync(`./database/test`)) {
       fs.rmSync(`./database/test`, {recursive: true});

@@ -1,8 +1,19 @@
 import chalk = require("chalk");
 
+/** Clase para la creacion de una nota */
 export class Nota {
+/**
+ * Clase para la creacion de una nota
+ * @param titulo Titulo de la nota
+ * @param body Contenido de la nota
+ * @param color Color de la nota
+ */
   constructor(protected titulo: string, protected body: string, protected color: string) {
   }
+  /**
+   * Metodo para la formateacion del titulo de una nota
+   * @returns Resultado formateado
+   */
   getColorTitulo(): string {
     let string: string = `${this.titulo}`;
     if (this.color == "rojo") {
@@ -18,6 +29,10 @@ export class Nota {
     }
     return string;
   }
+  /**
+   * Metodo para la formateacion del contenido de una nota
+   * @returns Resultado formateado
+   */
   getRead(): string {
     let string: string = `Titulo: ${this.titulo}\nBody: ${this.body}\nColor: ${this.color}`;
     if (this.color == "rojo") {

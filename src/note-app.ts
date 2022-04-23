@@ -1,6 +1,7 @@
 import * as yargs from 'yargs';
 import {Usuario} from './usuario';
 
+/** Comando para la creacion de una nota */
 yargs.command({
   command: 'add',
   describe: 'Añadir una nota',
@@ -36,6 +37,7 @@ yargs.command({
   },
 });
 
+/** Comando para la visualizacion de todas las notas de un usuario */
 yargs.command({
   command: 'list',
   describe: 'Ver las notas',
@@ -53,6 +55,7 @@ yargs.command({
   },
 });
 
+/** Comando para la lectura de una nota en específico */
 yargs.command({
   command: 'read',
   describe: 'Ver una nota en específico',
@@ -75,6 +78,7 @@ yargs.command({
   },
 });
 
+/** Comando para eliminación de una nota en específico */
 yargs.command({
   command: 'remove',
   describe: 'Eliminar una nota en específico',
@@ -97,6 +101,7 @@ yargs.command({
   },
 });
 
+/** Comando para la modificación de una nota en específico */
 yargs.command({
   command: 'mod',
   describe: 'Modificar una nota en específico',
