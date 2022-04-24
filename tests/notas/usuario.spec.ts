@@ -1,6 +1,6 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Usuario} from '../src/usuario';
+import {Usuario} from '../../src/usuario';
 import * as chalk from 'chalk';
 
 describe("Clase Usuario", () => {

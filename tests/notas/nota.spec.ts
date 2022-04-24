@@ -1,7 +1,7 @@
 import 'mocha';
 import {expect} from 'chai';
 import * as chalk from 'chalk';
-import {Nota} from '../src/nota';
+import {Nota} from '../../src/nota';
 
 describe("Clase Notas", () => {
   const notaRoja = new Nota("Titulo1", "Hola, esto es el cuerpo de la nota 1", "rojo");
