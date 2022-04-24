@@ -27,6 +27,6 @@ export abstract class TemplateMethod {
     });
     return resultado;
   }
-  protected map(func: (numero: number) => number) {
-  };
+  // protected map(func: (numero: number) => number) {
+  // };
 }

@@ -1,6 +1,8 @@
 import * as yargs from 'yargs';
 import {Usuario} from './usuario';
 
+const stringTitulo: string = "Título de la nota";
+
 /** Comando para la creacion de una nota */
 yargs.command({
   command: 'add',
@@ -12,7 +14,7 @@ yargs.command({
       type: 'string',
     },
     title: {
-      describe: 'Título de la nota',
+      describe: stringTitulo,
       demandOption: true,
       type: 'string',
     },
@@ -66,7 +68,7 @@ yargs.command({
       type: 'string',
     },
     title: {
-      describe: 'Título de la nota',
+      describe: stringTitulo,
       demandOption: true,
       type: 'string',
     },
@@ -89,7 +91,7 @@ yargs.command({
       type: 'string',
     },
     title: {
-      describe: 'Título de la nota',
+      describe: stringTitulo,
       demandOption: true,
       type: 'string',
     },
@@ -112,7 +114,7 @@ yargs.command({
       type: 'string',
     },
     title: {
-      describe: 'Título de la nota',
+      describe: stringTitulo,
       demandOption: true,
       type: 'string',
     },

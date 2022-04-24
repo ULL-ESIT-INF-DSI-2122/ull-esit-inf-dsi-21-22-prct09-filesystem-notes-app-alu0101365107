@@ -15,14 +15,14 @@ export class Nota {
    * @returns Resultado formateado
    */
   getColorTitulo(): string {
-    let string: string = `${this.titulo}`;
-    if (this.color == "rojo") {
+    let string = `${this.titulo}`;
+    if (this.color === "rojo") {
       string = chalk.red(string);
-    } else if (this.color == "azul") {
+    } else if (this.color === "azul") {
       string = chalk.blue(string);
-    } else if (this.color == "amarillo") {
+    } else if (this.color === "amarillo") {
       string = chalk.yellow(string);
-    } else if (this.color == "verde") {
+    } else if (this.color === "verde") {
       string = chalk.green(string);
     } else {
       string = string + ("El color establecido no es posible mostrarlo");
@@ -34,14 +34,14 @@ export class Nota {
    * @returns Resultado formateado
    */
   getRead(): string {
-    let string: string = `Titulo: ${this.titulo}\nBody: ${this.body}\nColor: ${this.color}`;
-    if (this.color == "rojo") {
+    let string = `Titulo: ${this.titulo}\nBody: ${this.body}\nColor: ${this.color}`;
+    if (this.color === "rojo") {
       string = chalk.red(string);
-    } else if (this.color == "azul") {
+    } else if (this.color === "azul") {
       string = chalk.blue(string);
-    } else if (this.color == "amarillo") {
+    } else if (this.color === "amarillo") {
       string = chalk.yellow(string);
-    } else if (this.color == "verde") {
+    } else if (this.color === "verde") {
       string = chalk.green(string);
     } else {
       string = string + ("\nEl color establecido no es posible mostrarlo");
