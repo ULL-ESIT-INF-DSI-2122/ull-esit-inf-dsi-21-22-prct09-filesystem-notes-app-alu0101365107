@@ -10,7 +10,6 @@
 //     });
 //     return resultado;
 //   }
-// }
-
 // const test: InitTemplateMethod = new InitTemplateMethod([1, 2, 3, 4]);
 // console.log(test.map((x: number) => 2));
+// }

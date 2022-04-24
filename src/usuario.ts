@@ -40,9 +40,7 @@ export class Usuario {
     if (fs.existsSync(`./database/${this.nombre}`)) {
       if (fs.existsSync(`./database/${this.nombre}/${title}.json`)) {
         fs.rmSync(`./database/${this.nombre}/${title}.json`);
-        // if (!fs.existsSync(`./database/${this.nombre}/${title}.json`)) {
         return chalk.green(`La nota con el título: ${title}\n Fue eliminada correctamente`);
-        // }
       } else {
         return chalk.red(`La nota con el título: ${title} no existe.`);
       }
