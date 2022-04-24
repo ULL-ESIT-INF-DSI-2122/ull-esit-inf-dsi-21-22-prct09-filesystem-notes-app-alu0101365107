@@ -14,7 +14,7 @@ export class Nota {
    * Metodo para la formateacion del titulo de una nota
    * @returns Resultado formateado
    */
-  getColorTitulo(): string {
+  public getColorTitulo(): string {
     let string = `${this.titulo}`;
     if (this.color === "rojo") {
       string = chalk.red(string);
@@ -33,7 +33,7 @@ export class Nota {
    * Metodo para la formateacion del contenido de una nota
    * @returns Resultado formateado
    */
-  getRead(): string {
+  public getRead(): string {
     let string = `Titulo: ${this.titulo}\nBody: ${this.body}\nColor: ${this.color}`;
     if (this.color === "rojo") {
       string = chalk.red(string);

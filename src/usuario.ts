@@ -17,7 +17,7 @@ export class Usuario {
    * @param color Color de la nota
    * @returns Resultado de la operacion de creacion
    */
-  add(title: string, body:string, color: string): string {
+  public add(title: string, body:string, color: string): string {
     const nota = new Nota(title, body, color);
     const notaJson = JSON.stringify(nota);
     if (!fs.existsSync(`./database/${this.nombre}`)) {
@@ -36,7 +36,7 @@ export class Usuario {
    * @param title Titulo de la nota a eliminar
    * @returns Resultado de la operacion de eliminacion
    */
-  remove(title: string): string {
+  public remove(title: string): string {
     if (fs.existsSync(`./database/${this.nombre}`)) {
       if (fs.existsSync(`./database/${this.nombre}/${title}.json`)) {
         fs.rmSync(`./database/${this.nombre}/${title}.json`);
@@ -52,7 +52,7 @@ export class Usuario {
    * Metodo para listar las notas de un usuario
    * @returns String con las notas formateadas
    */
-  list(): string {
+  public list(): string {
     if (fs.existsSync(`./database/${this.nombre}`)) {
       const ficheros = fs.readdirSync(`./database/${this.nombre}`);
       console.log("Tus notas: \n");
@@ -73,7 +73,7 @@ export class Usuario {
    * @param title Titulo de la nota
    * @returns Contenido de la nota
    */
-  read(title: string): string {
+  public read(title: string): string {
     if (fs.existsSync(`./database/${this.nombre}`)) {
       if (fs.existsSync(`./database/${this.nombre}/${title}.json`)) {
         const buffer = fs.readFileSync(`./database/${this.nombre}/${title}.json`, 'utf8');
@@ -94,7 +94,7 @@ export class Usuario {
    * @param isColor En caso de que sea true, el usuario estara modificando el color, de lo contrario modificara el contenido
    * @returns Resultado de la operacion de modificacion
    */
-  mod(title: string, datoActualizar?: string, isColor: boolean = false): string {
+  public mod(title: string, datoActualizar?: string, isColor: boolean = false): string {
     if (fs.existsSync(`./database/${this.nombre}`)) {
       if (fs.existsSync(`./database/${this.nombre}/${title}.json`)) {
         if (datoActualizar) {
@@ -121,7 +121,7 @@ export class Usuario {
    * Metodo creado para la inicializacion de los expect
    * @returns Valor de la operacion
    */
-  initializeTest(): boolean {
+  public initializeTest(): boolean {
     if (fs.existsSync(`./database/test`)) {
       fs.rmSync(`./database/test`, {recursive: true});
     }
